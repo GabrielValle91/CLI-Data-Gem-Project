@@ -56,6 +56,8 @@ class MoviesNearBy::CLI
         #need to create a method that accepts a movie object and prints the details for it
         if movie = MoviesNearBy::Movies.find(input.to_i) #need to create a find method for movies
           self.print_movie_details(movie)
+        else
+          puts "There is no movie on the list with that number, try again please."
         end
       elsif input == "exit"
       else
