@@ -32,6 +32,7 @@ class MovieScraper
     movie_hash[:genre] = details.css("span").text
     movie_hash[:bio] = details.css(".outline").text.gsub(/\n/,"").strip
     movie_hash[:review_score] = details.css(".rating_txt .rating-rating").text
+    movie_hash
     #binding.pry
   end
 end
