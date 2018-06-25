@@ -11,7 +11,7 @@ class MoviesNearBy::Movies
 
   def self.create_from_list(movie_array)
     movie_array.each do |movie|
-      MoviesNearBy::Movies.new(movie) #decided to feed hash into initialize instead of individual attributes
+      MoviesNearBy::Movies.new(movie)
     end
   end
 
