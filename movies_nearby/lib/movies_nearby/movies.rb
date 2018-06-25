@@ -1,7 +1,7 @@
 class MoviesNearBy::Movies
   @@all = []
 
-  attr_accessor :name, :url
+  attr_accessor :name, :url, :rating, :length, :genre, :bio, :review_score
 
   def initialize(movie_hash)
     @name = movie_hash[:name]
