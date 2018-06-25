@@ -1,8 +1,7 @@
 # MoviesNearby
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/movies_nearby`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to MoviesNearby! This gem allows the user to enter a zip code to return a list of movies in theaters near that zip code. The user can then ask for more detail on a movie in the list.
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -22,7 +21,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To use this gem, run the movies-nearby file in the bin folder. The user will be prompted to enter a zip code and a list of movies in theaters near you will be returned.
+The user will then have the option of acquiring more detail about a movie in the list by entering the list number corresponding to the movie.
+The user can exit the application at any time by entering 'exit'.
 
 ## Development
 
