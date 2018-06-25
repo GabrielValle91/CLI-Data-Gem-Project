@@ -1,0 +1,3 @@
+class MoviesNearBy::Movies
+
+end
