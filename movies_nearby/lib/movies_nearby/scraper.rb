@@ -9,8 +9,8 @@ class MovieScraper
     #these details will be storage in a hash and then pushed onto the movie_array
     movie_list.each do |movie|
       movie_hash = {}
-      movie_hash[:name] = movie.css(".title")
-      movie_hash[:url] = movie.css("a").attribute("href").value
+      movie_hash[:name] = movie.css(".title").text
+      movie_hash[:url] = ("https://www.imdb.com" + movie.css("a").attribute("href").value.gsub("?ref_=shlc_li_i","") + "US/" + zip_code).chomp
       #binding.pry
 
       movie_array << movie_hash
@@ -19,7 +19,7 @@ class MovieScraper
     movie_array
   end
 
-  def self.scrape_movie_details(movie.url)
+  def self.scrape_movie_details(movie_url)
 
   end
 end

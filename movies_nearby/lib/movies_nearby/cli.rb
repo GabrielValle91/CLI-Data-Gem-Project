@@ -20,7 +20,11 @@ class MoviesNearBy::CLI
     #the details will be stored as a hash and then added to the corresponding Movie instance
     movie_details = {}
     MoviesNearBy::Movies.all.each do |movie|
+      #running into error here, lets pry
+      #binding.pry
+      #discovered url is not being stored correctly, lets look at Scraper class
       movie_details = MovieScraper.scrape_movie_details(movie.url)
+      #url was initially not including https://www.imdb.com
       movie.add_moviedetails(movie_details)
     end
   end

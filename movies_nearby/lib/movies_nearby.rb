@@ -1,5 +1,8 @@
-require "movies_nearby/version"
+require 'open-uri'
+require 'nokogiri'
+require 'pry'
 
-module MoviesNearby
-  # Your code goes here...
-end
+require_relative "./movies_nearby/version"
+require_relative './movies_nearby/movies'
+require_relative './movies_nearby/cli'
+require_relative './movies_nearby/scraper'
