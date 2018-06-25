@@ -5,7 +5,9 @@ class MoviesNearBy::CLI
     #create movies found based on zip
     self.create_movies
     #list Movies
+    self.list_movies
     #ask which movie to provide more detail on
+    self.inquire
     #say goodbye to user upon exit
   end
 
@@ -29,12 +31,31 @@ class MoviesNearBy::CLI
       #getting an error here with only some zip codes, need to look into it
 
     end
+  end
 
-    def list_movies
-      puts "Movies in a theater near you:"
-      @movies = MoviesNearBy::Movies.all
-      @movies.each.with_index(1) do |movie, i|
-        puts "#{i}. #{movie.name}"
+  def list_movies
+    puts "Movies in a theater near you:"
+    @movies = MoviesNearBy::Movies.all
+    @movies.each.with_index(1) do |movie, i|
+      puts "#{i}. #{movie.name}"
+    end
+  end
+
+  def inquire
+    #need to ask user to select a movie to get more detail on
+    #or to relist the movies
+    #or to exit the program
+    input = nil
+    while input != "exit"
+      puts "Enter the number of the movie you would like more info on or type 'list' to return to the list or 'exit':"
+      input = gets.strip.downcase #keep the value checking simple by making it always all lowercase
+      if input == "list" #this will display the list of movies again
+        self.list_movies
+      elsif input.to_i > 0 #this will return the instance of the Movies object that corresponds to the number entered
+        #need to create a method that accepts a movie object and prints the details for it
+      elsif input == "exit"
+      else
+        puts "That is not a valid option, please try again."
       end
     end
   end
