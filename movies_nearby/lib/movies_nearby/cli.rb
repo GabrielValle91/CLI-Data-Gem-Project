@@ -26,6 +26,16 @@ class MoviesNearBy::CLI
       movie_details = MovieScraper.scrape_movie_details(movie.url)
       #url was initially not including https://www.imdb.com
       movie.add_movie_details(movie_details)
+      #getting an error here with only some zip codes, need to look into it
+
+    end
+
+    def list_movies
+      puts "Movies in a theater near you:"
+      @movies = MoviesNearBy::Movies.all
+      @movies.each.with_index(1) do |movie, i|
+        puts "#{i}. #{movie.name}"
+      end
     end
   end
 
