@@ -9,6 +9,7 @@ class MoviesNearBy::CLI
     #ask which movie to provide more detail on
     self.inquire
     #say goodbye to user upon exit
+    self.goodbye
   end
 
   def create_movies
@@ -71,6 +72,10 @@ class MoviesNearBy::CLI
     puts "Score: #{movie.review_score}"
     puts "Summary: #{movie.bio}"
     puts ""
+  end
+
+  def goodbye
+    puts "\nHopefully you found a movie to enjoy!\nGoodbye!"
   end
 
 end
