@@ -8,4 +8,10 @@ class MoviesNearBy::CLI
     #say goodbye to user upon exit
   end
 
+  def create_movies
+    puts "Welcome! This program will help you find movies in a spcefied zip code"
+    puts "\nPlease enter a zip code"
+    zip_code = gets
+  end
+
 end
