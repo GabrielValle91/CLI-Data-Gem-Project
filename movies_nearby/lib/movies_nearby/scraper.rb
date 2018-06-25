@@ -27,7 +27,12 @@ class MovieScraper
     doc = Nokogiri::HTML(html)
     #time to dig for details
     details = doc.css(".cert-runtime-genre")
-    movie_hash[:rating] = details.css("img").attribute("title").value
+    #some movies do not have a rating on imdb, need to tweak this....
+    if doc.search(".cert-runtime-genre img").size > 0
+      movie_hash[:rating] = details.css("img").attribute("title").value
+    else
+      movie_hash[:rating] = "no rating"
+    end
     movie_hash[:length] = details.css("time").text
     movie_hash[:genre] = details.css("span").text
     movie_hash[:bio] = doc.css(".outline").text.gsub(/\n/,"").strip

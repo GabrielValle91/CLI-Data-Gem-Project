@@ -30,7 +30,7 @@ class MoviesNearBy::CLI
       #url was initially not including https://www.imdb.com
       movie.add_movie_details(movie_details)
       #getting an error here with only some zip codes, need to look into it
-
+      #undefined method 'attribute' for nil:NilClass... why is this happening?
     end
   end
 
