@@ -27,6 +27,11 @@ class MovieScraper
     doc = Nokogiri::HTML(html)
     #time to dig for details
     details = doc.css(".cert-runtime-genre")
-    binding.pry
+    movie_hash[:rating] = details.css("img").attribute("title").value
+    movie_hash[:length] = details.css("time").text
+    movie_hash[:genre] = details.css("span").text
+    movie_hash[:bio] = details.css(".outline").text.gsub(/\n/,"").strip
+    movie_hash[:review_score] = details.css(".rating_txt .rating-rating").text
+    #binding.pry
   end
 end
