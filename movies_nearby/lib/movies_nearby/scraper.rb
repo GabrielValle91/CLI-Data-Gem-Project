@@ -11,11 +11,15 @@ class MovieScraper
       movie_hash = {}
       movie_hash[:name] = movie.css(".title")
       movie_hash[:url] = movie.css("a").attribute("href").value
-      binding.pry
+      #binding.pry
 
       movie_array << movie_hash
     end
 
     movie_array
+  end
+
+  def self.scrape_movie_details(movie.url)
+
   end
 end
