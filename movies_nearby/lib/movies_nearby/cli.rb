@@ -53,11 +53,24 @@ class MoviesNearBy::CLI
         self.list_movies
       elsif input.to_i > 0 #this will return the instance of the Movies object that corresponds to the number entered
         #need to create a method that accepts a movie object and prints the details for it
+        if movie = MoviesNearBy::Movies.find(input.to_i) #need to create a find method for movies
+          self.print_movie_details(movie)
+        end
       elsif input == "exit"
       else
         puts "That is not a valid option, please try again."
       end
     end
+  end
+
+  def print_movie_details(movie)
+    puts "\nMovie Name: #{movie.name}"
+    puts "Rating: #{movie.rating}"
+    puts "Length: #{movie.length}"
+    puts "Genre(s): #{movie.genre}"
+    puts "Score: #{movie.review_score}"
+    puts "Summary: #{movie.bio}"
+    puts ""
   end
 
 end

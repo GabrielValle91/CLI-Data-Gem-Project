@@ -23,6 +23,10 @@ class MoviesNearBy::Movies
     @review_score = movie_details[:review_score]
   end
 
+  def self.find(number)
+    @@all[number - 1]
+  end
+
   def self.all
     @@all
   end
