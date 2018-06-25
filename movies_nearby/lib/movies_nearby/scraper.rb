@@ -20,6 +20,12 @@ class MovieScraper
   end
 
   def self.scrape_movie_details(movie_url)
-
+    #need to store movie attributes in a hash to easily add them to their Movie object
+    movie_hash = {}
+    #must open up movie url to scrape details
+    html = open(movie_url)
+    doc = Nokogiri::HTML(html)
+    #time to dig for details
+    binding.pry
   end
 end
