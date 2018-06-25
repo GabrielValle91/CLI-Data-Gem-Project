@@ -25,7 +25,7 @@ class MoviesNearBy::CLI
       #discovered url is not being stored correctly, lets look at Scraper class
       movie_details = MovieScraper.scrape_movie_details(movie.url)
       #url was initially not including https://www.imdb.com
-      movie.add_moviedetails(movie_details)
+      movie.add_movie_details(movie_details)
     end
   end
 

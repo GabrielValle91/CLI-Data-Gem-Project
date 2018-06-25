@@ -15,8 +15,12 @@ class MoviesNearBy::Movies
     end
   end
 
-  def add_moviedetails(movie_details)
-
+  def add_movie_details(movie_details)
+    @rating = movie_details[:rating]
+    @length = movie_details[:length]
+    @genre = movie_details[:genre]
+    @bio = movie_details[:bio]
+    @review_score = movie_details[:review_score]
   end
 
   def self.all
