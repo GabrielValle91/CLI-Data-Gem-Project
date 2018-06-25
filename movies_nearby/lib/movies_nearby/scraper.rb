@@ -26,6 +26,7 @@ class MovieScraper
     html = open(movie_url)
     doc = Nokogiri::HTML(html)
     #time to dig for details
+    details = doc.css(".cert-runtime-genre")
     binding.pry
   end
 end
