@@ -13,7 +13,7 @@ class MoviesNearBy::CLI
   end
 
   def create_movies
-    puts "Welcome! This program will help you find movies in a spcefied zip code"
+    puts "Welcome! This program will help you find movies in a specified zip code"
     puts "\nPlease enter a zip code"
     zip_code = gets
     overview_url = "https://www.imdb.com/showtimes/location/US/#{zip_code}".chomp
