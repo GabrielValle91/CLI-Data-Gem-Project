@@ -1,9 +1,7 @@
 class MovieScraper
   def self.scrape_movie_overview(overview_url, zip_code)
-    html = open(overview_url)
-    doc = Nokogiri::HTML(html)
+    doc = Nokogiri::HTML(open(overview_url))
     movie_array = []
-
     movie_list = doc.css(".lister-item")
     movie_list.each do |movie|
       movie_hash = {}
@@ -11,14 +9,12 @@ class MovieScraper
       movie_hash[:url] = ("https://www.imdb.com" + movie.css("a").attribute("href").value.gsub("?ref_=shlc_li_i","") + "US/" + zip_code).chomp
       movie_array << movie_hash
     end
-
     movie_array
   end
 
   def self.scrape_movie_details(movie_url)
     movie_hash = {}
-    html = open(movie_url)
-    doc = Nokogiri::HTML(html)
+    doc = Nokogiri::HTML(open(movie_url))
     details = doc.css(".cert-runtime-genre")
     if doc.search(".cert-runtime-genre img").size > 0
       movie_hash[:rating] = details.css("img").attribute("title").value

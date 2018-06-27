@@ -11,7 +11,7 @@ class MoviesNearBy::CLI
     puts "Welcome! This program will help you find movies in a specified zip code"
     puts "\nPlease enter a zip code"
     zip_code = gets
-    overview_url = "https://www.imdb.com/showtimes/location/US/#{zip_code}".chomp
+    overview_url = "https://www.imdb.com/showtimes/location/US/#{zip_code}".strip
     movies = MovieScraper.scrape_movie_overview(overview_url, zip_code)
     MoviesNearBy::Movies.create_from_list(movies)
     movie_details = {}
