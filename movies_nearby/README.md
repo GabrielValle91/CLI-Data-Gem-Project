@@ -33,4 +33,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/'GabrielValle91'/movies_nearby.
+Bug reports and pull requests are welcome on GitHub at https://github.com/'GabrielValle91'/CLI-Data-Gem-Project.
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
